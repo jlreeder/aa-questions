@@ -1,12 +1,12 @@
 CREATE TABLE users (
   id INTEGER PRIMARY KEY,
-  fname TEXT NOT NULL,
-  lname TEXT NOT NULL
+  fname VARCHAR(255) NOT NULL,
+  lname VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE questions (
   id INTEGER PRIMARY KEY,
-  title TEXT NOT NULL,
+  title VARCHAR(255) NOT NULL,
   body TEXT NOT NULL
 );
 

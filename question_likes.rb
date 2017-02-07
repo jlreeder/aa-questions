@@ -1,0 +1,26 @@
+require_relative 'questions_database'
+
+class QuestionLike
+
+  def self.find_by_id(id)
+    question_like = QuestionsDatabase.instance.execute(<<-SQL, id)
+      SELECT
+        *
+      FROM
+        question_likes
+      WHERE
+        id = ?
+    SQL
+
+    question_like.empty? ? nil : QuestionLike.new(question_like.first)
+  end
+
+  def initialize(options)
+
+  end
+end
+
+
+
+question_like = QuestionLike.find_by_id(1)
+p question_like

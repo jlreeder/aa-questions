@@ -1,0 +1,26 @@
+require_relative 'questions_database'
+
+class QuestionFollow
+
+  def self.find_by_id(id)
+    question_follow = QuestionsDatabase.instance.execute(<<-SQL, id)
+      SELECT
+        *
+      FROM
+        question_follows
+      WHERE
+        id = ?
+    SQL
+
+    question_follow.empty? ? nil : QuestionFollow.new(question_follow.first)
+  end
+
+  def initialize(options)
+
+  end
+end
+
+
+
+question_follow = QuestionFollow.find_by_id(1)
+p question_follow

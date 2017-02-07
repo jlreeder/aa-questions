@@ -2,6 +2,8 @@ require_relative 'questions_database'
 
 class QuestionLike
 
+  attr_accessor :id, :user_liker_id, :question_liked_id
+
   def self.find_by_id(id)
     question_like = QuestionsDatabase.instance.execute(<<-SQL, id)
       SELECT

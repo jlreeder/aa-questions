@@ -2,6 +2,8 @@ require_relative 'questions_database'
 
 class QuestionFollow
 
+  attr_accessor :id, :user_follower_id, :question_followed_id
+
   def self.find_by_id(id)
     question_follow = QuestionsDatabase.instance.execute(<<-SQL, id)
       SELECT

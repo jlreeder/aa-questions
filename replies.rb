@@ -2,6 +2,8 @@ require_relative 'questions_database'
 
 class Reply
 
+  attr_accessor :id, :body, :user_id, :question_id, :parent_reply_id
+
   def self.find_by_id(id)
     reply = QuestionsDatabase.instance.execute(<<-SQL, id)
       SELECT

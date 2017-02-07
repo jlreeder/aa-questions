@@ -27,7 +27,8 @@ class Question
         user_asker_id = ?
     SQL
 
-    p questions
+    return nil if questions.empty?
+    questions.map { |ele| Question.new(ele) }
   end
 
   def initialize(options)
@@ -43,3 +44,4 @@ end
 # question = Question.find_by_id(1)
 # p question.title
 questions = Question.find_by_author(1)
+p questions

@@ -17,6 +17,20 @@ class User
     user.empty? ? nil : User.new(user.first)
   end
 
+  def self.find_by_name(fname, lname)
+    user = QuestionsDatabase.instance.execute(<<-SQL, fname, lname)
+      SELECT
+        *
+      FROM
+        users
+      WHERE
+        fname = ? AND
+        lname = ?
+    SQL
+
+    user.empty? ? nil : User.new(user.first)
+  end
+
   def initialize(options)
     @id = options['id']
     @fname = options['fname']
@@ -26,5 +40,5 @@ end
 
 
 
-user = User.find_by_id(1)
-p user.fname
+user = User.find_by_name('Pow', 'Hatan')
+p user

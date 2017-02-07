@@ -7,7 +7,8 @@ CREATE TABLE users (
 CREATE TABLE questions (
   id INTEGER PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
-  body TEXT NOT NULL
+  body TEXT NOT NULL,
+  FOREIGN KEY (user_asker_id) REFERENCES users.id
 );
 
 CREATE TABLE question_follows (

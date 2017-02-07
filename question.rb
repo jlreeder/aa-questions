@@ -1,4 +1,5 @@
 require_relative 'questions_database'
+require_relative 'reply'
 
 class Question
 
@@ -52,9 +53,12 @@ class Question
     author_found.empty? ? nil : author_found.first
   end
 
+  def replies
+    Reply.find_by_question_id(@id)
+  end
 end
 
 
 
-question = Question.find_by_id(1)
-p question.author
+question = Question.find_by_id(2)
+p question.replies

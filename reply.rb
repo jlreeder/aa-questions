@@ -58,4 +58,4 @@ end
 
 # reply = Reply.find_by_id(1)
 # p Reply.find_by_user_id(2)
-p Reply.find_by_question_id(1)
+# p Reply.find_by_question_id(1)

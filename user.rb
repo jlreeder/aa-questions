@@ -1,5 +1,6 @@
 require_relative 'questions_database'
 require_relative 'question'
+require_relative 'reply'
 
 class User
 
@@ -41,8 +42,12 @@ class User
   def authored_questions
     Question.find_by_author_id(@id)
   end
+
+  def authored_replies
+    Reply.find_by_user_id(@id)
+  end
 end
 
 
 
-p User.find_by_name('John', 'Smith').authored_questions
+p User.find_by_name('Pow', 'Hatan').authored_replies

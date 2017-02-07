@@ -52,10 +52,24 @@ class Reply
     @question_id = options['question_id']
     @parent_reply_id = options['parent_reply_id']
   end
+
+
+  def author
+    author_found = QuestionsDatabase.instance.execute(<<-SQL, @user_asker_id)
+      SELECT
+        *
+      FROM
+        users
+      WHERE
+        id = ?
+    SQL
+
+    author_found.empty? ? nil : author_found.first
+  end
 end
 
 
 
-# reply = Reply.find_by_id(1)
+p Reply.find_by_id(1).author
 # p Reply.find_by_user_id(2)
 # p Reply.find_by_question_id(1)

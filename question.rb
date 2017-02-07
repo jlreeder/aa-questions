@@ -37,11 +37,23 @@ class Question
     @body = options['body']
     @user_asker_id = options['user_asker_id']
   end
+
+
+  def author
+    author = QuestionsDatabase.instance.execute(<<-SQL, @user_asker_id)
+      SELECT
+        *
+      FROM
+        users
+      WHERE
+        id = ?
+    SQL
+
+    author.empty? ? nil : author.first
+  end
 end
 
 
 
-# question = Question.find_by_id(1)
-# p question.title
-# questions = Question.find_by_author_id(1)
-# p questions
+question = Question.find_by_id(1)
+p question.author

@@ -3,7 +3,7 @@ require_relative 'questions_database'
 class User
 
   def self.find_by_id(id)
-    user = usersDatabase.instance.execute(<<-SQL, id)
+    user = QuestionsDatabase.instance.execute(<<-SQL, id)
       SELECT
         *
       FROM

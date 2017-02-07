@@ -40,7 +40,7 @@ class Question
 
 
   def author
-    author = QuestionsDatabase.instance.execute(<<-SQL, @user_asker_id)
+    author_found = QuestionsDatabase.instance.execute(<<-SQL, @user_asker_id)
       SELECT
         *
       FROM
@@ -49,8 +49,9 @@ class Question
         id = ?
     SQL
 
-    author.empty? ? nil : author.first
+    author_found.empty? ? nil : author_found.first
   end
+
 end
 
 

@@ -63,7 +63,8 @@ VALUES
 INSERT INTO
   questions (title, body, user_asker_id)
 VALUES
-  ('Where is Pocahantis?', 'Where could Pocahantis be?', 1);
+  ('Where is Pocahantis?', 'Where could Pocahantis be?', 1),
+  ('Who let the dogs out?', 'Where are all the dogs at?', 1);
 
 INSERT INTO
   question_follows (user_follower_id, question_followed_id)

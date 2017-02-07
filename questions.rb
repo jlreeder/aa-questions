@@ -17,7 +17,7 @@ class Question
     question.empty? ? nil : Question.new(question.first)
   end
 
-  def self.find_by_author(author_id)
+  def self.find_by_author_id(author_id)
     questions = QuestionsDatabase.instance.execute(<<-SQL, author_id)
       SELECT
         *
@@ -43,5 +43,5 @@ end
 
 # question = Question.find_by_id(1)
 # p question.title
-questions = Question.find_by_author(1)
+questions = Question.find_by_author_id(1)
 p questions

@@ -34,14 +34,17 @@ CREATE TABLE question_likes (
 INSERT INTO
   users (fname, lname)
 VALUES
-  ('John', 'Smith');
+  ('John', 'Smith'),
+  ('Pow', 'Hatan');
 
 INSERT INTO
   questions (title, body, user_asker_id)
 VALUES
   ('Where is Pocahantis?', 'God knows!', 1);
 
-  INSERT INTO
-    question_follows (id, user_follower_id, question_followed_id)
-  VALUES
-    ('John', 'Smith')
+INSERT INTO
+  question_follows (user_follower_id, question_followed_id)
+VALUES
+  (2,1);
+
+  

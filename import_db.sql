@@ -12,8 +12,8 @@ CREATE TABLE questions (
 
 CREATE TABLE question_follows (
   id INTEGER PRIMARY KEY,
-  FOREIGN KEY (user_id) REFERENCES users.id,
-  FOREIGN KEY (question_id) REFERENCES questions.id
+  FOREIGN KEY (user_follower_id) REFERENCES users.id,
+  FOREIGN KEY (question_followed_id) REFERENCES questions.id
 );
 
 CREATE TABLE replies (

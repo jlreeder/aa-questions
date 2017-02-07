@@ -18,7 +18,7 @@ class Reply
   end
 
   def self.find_by_user_id(user_id)
-    reply = QuestionsDatabase.instance.execute(<<-SQL, user_id)
+    replies = QuestionsDatabase.instance.execute(<<-SQL, user_id)
       SELECT
         *
       FROM
@@ -27,6 +27,8 @@ class Reply
         user_asker_id = ?
       SQL
 
+    return nil if replies.empty?
+    replies.map { |ele| Reply.new(ele) }
   end
 
   def initialize(options)
@@ -40,5 +42,5 @@ end
 
 
 
-reply = Reply.find_by_id(1)
-p reply.body
+# reply = Reply.find_by_id(1)
+p Reply.find_by_user_id(2)

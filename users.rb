@@ -16,7 +16,9 @@ class User
   end
 
   def initialize(options)
-
+    @id = options['id']
+    @fname = options['fname']
+    @lname = options['lname']
   end
 end
 

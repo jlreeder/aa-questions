@@ -16,7 +16,9 @@ class QuestionLike
   end
 
   def initialize(options)
-
+    @id = options['id']
+    @user_liker_id = options['user_liker_id']
+    @question_liked_id = options['question_liked_id']
   end
 end
 

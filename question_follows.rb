@@ -16,7 +16,9 @@ class QuestionFollow
   end
 
   def initialize(options)
-
+    @id = options['id']
+    @user_follower_id = options['user_follower_id']
+    @question_followed_id = options['question_followed_id']
   end
 end
 

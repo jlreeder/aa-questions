@@ -16,7 +16,10 @@ class Question
   end
 
   def initialize(options)
-
+    @id = options['id']
+    @title = options['title']
+    @body = options['body']
+    @user_asker_id = options['user_asker_id']
   end
 end
 

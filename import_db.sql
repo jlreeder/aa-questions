@@ -36,6 +36,7 @@ INSERT INTO
 VALUES
   ('John', 'Smith'),
   ('Pow', 'Hatan');
+  ('Natalie', 'Portman');
 
 INSERT INTO
   questions (title, body, user_asker_id)
@@ -50,4 +51,9 @@ VALUES
 INSERT INTO
   replies (body, user_id, question_id, parent_reply_id)
 VALUES
-  ('She''s probably in her apartment', 2, 1, NULL)
+  ('She''s probably in her apartment', 2, 1, NULL);
+
+INSERT INTO
+  question_likes (user_liker_id, question_liked_id)
+VALUES
+  (3, 1);

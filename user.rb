@@ -45,5 +45,4 @@ end
 
 
 
-user = User.find_by_name('Pow', 'Hatan')
-p user
+p User.find_by_name('John', 'Smith').authored_questions

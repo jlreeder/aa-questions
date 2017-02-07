@@ -43,5 +43,5 @@ end
 
 # question = Question.find_by_id(1)
 # p question.title
-questions = Question.find_by_author_id(1)
-p questions
+# questions = Question.find_by_author_id(1)
+# p questions

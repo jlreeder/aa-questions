@@ -27,4 +27,4 @@ end
 
 
 question_follow = QuestionFollow.find_by_id(1)
-p question_follow
+p question_follow.question_followed_id

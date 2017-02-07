@@ -29,4 +29,4 @@ end
 
 
 reply = Reply.find_by_id(1)
-p reply
+p reply.body

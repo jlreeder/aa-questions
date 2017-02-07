@@ -28,4 +28,4 @@ end
 
 
 question = Question.find_by_id(1)
-p question
+p question.title

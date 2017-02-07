@@ -11,11 +11,9 @@ class Question
       WHERE
         id = ?
     SQL
-    return nil unless question.length > 0
 
-    Question.new(question.first)
+    question.empty? ? nil : Question.new(question.first)
   end
-
 
   def initialize(options)
 
@@ -25,4 +23,4 @@ end
 
 
 question = Question.find_by_id(1)
-p question 
+p question

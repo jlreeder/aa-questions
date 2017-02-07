@@ -33,11 +33,11 @@ DROP TABLE IF EXISTS replies;
 CREATE TABLE replies (
   id INTEGER PRIMARY KEY,
   body TEXT NOT NULL,
-  user_id INTEGER NOT NULL,
+  user_asker_id INTEGER NOT NULL,
   question_id INTEGER NOT NULL,
   parent_reply_id INTEGER,
 
-  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (user_asker_id) REFERENCES users(id),
   FOREIGN KEY (question_id) REFERENCES questions(id),
   FOREIGN KEY (parent_reply_id) REFERENCES replies(id)
 );

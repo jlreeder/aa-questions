@@ -72,7 +72,7 @@ VALUES
   (2,1);
 
 INSERT INTO
-  replies (body, user_id, question_id, parent_reply_id)
+  replies (body, user_asker_id, question_id, parent_reply_id)
 VALUES
   ('She''s probably in her apartment', 2, 1, NULL);
 

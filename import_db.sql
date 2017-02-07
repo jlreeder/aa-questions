@@ -30,3 +30,18 @@ CREATE TABLE question_likes (
   FOREIGN KEY (user_liker_id) REFERENCES users.id,
   FOREIGN KEY (question_liked_id) REFERENCES questions.id
 );
+
+INSERT INTO
+  users (fname, lname)
+VALUES
+  ('John', 'Smith');
+
+INSERT INTO
+  questions (title, body, user_asker_id)
+VALUES
+  ('Where is Pocahantis?', 'God knows!', 1);
+
+  INSERT INTO
+    question_follows (id, user_follower_id, question_followed_id)
+  VALUES
+    ('John', 'Smith')

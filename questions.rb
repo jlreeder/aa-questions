@@ -17,6 +17,19 @@ class Question
     question.empty? ? nil : Question.new(question.first)
   end
 
+  def self.find_by_author(author_id)
+    questions = QuestionsDatabase.instance.execute(<<-SQL, author_id)
+      SELECT
+        *
+      FROM
+        questions
+      WHERE
+        user_asker_id = ?
+    SQL
+
+    p questions
+  end
+
   def initialize(options)
     @id = options['id']
     @title = options['title']
@@ -27,5 +40,6 @@ end
 
 
 
-question = Question.find_by_id(1)
-p question.title
+# question = Question.find_by_id(1)
+# p question.title
+questions = Question.find_by_author(1)

@@ -23,8 +23,3 @@ class QuestionLike
     @question_liked_id = options['question_liked_id']
   end
 end
-
-
-
-question_like = QuestionLike.find_by_id(1)
-p question_like.user_liker_id

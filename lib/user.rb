@@ -47,7 +47,3 @@ class User
     Reply.find_by_user_id(@id)
   end
 end
-
-
-
-p User.find_by_name('Pow', 'Hatan').authored_replies

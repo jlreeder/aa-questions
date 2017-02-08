@@ -23,8 +23,3 @@ class QuestionFollow
     @question_followed_id = options['question_followed_id']
   end
 end
-
-
-
-question_follow = QuestionFollow.find_by_id(1)
-p question_follow.question_followed_id

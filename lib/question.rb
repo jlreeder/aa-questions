@@ -57,8 +57,3 @@ class Question
     Reply.find_by_question_id(@id)
   end
 end
-
-
-
-question = Question.find_by_id(2)
-p question.replies
